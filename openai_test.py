@@ -6,11 +6,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
-# print(openai.Model.list())
+
+prompt = "Give me the 3 main plotpoint of the matrix"
 
 response = openai.Completion.create(
     model="text-davinci-003",
-    prompt="Give me the 5 names of the pillars of bitcoin",
+    prompt=prompt,
     temperature=0.3,
     max_tokens=150,
     top_p=1.0,
